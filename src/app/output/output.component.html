@@ -1,0 +1,11 @@
+<p>output works!</p>
+
+<button (click)="getval()">Click Me!!</button>
+
+<h1 [ngStyle]="{'color': hide ? 'red' : 'blue'}">i think she want talk with you</h1>
+<button (click)="color()">color</button>
+
+<h2 appEle *ngFor="let value of arr let i=index" >{{i+1}} . {{value}} </h2>
+
+
+<h2 [ngClass]="hide ? 'big' : 'small'">Once apon a time.When i was 10 yers ols. i was going to school. </h2>

@@ -1,0 +1,50 @@
+<form class="forms">
+
+    <span>Name </span>
+    <input type="text" [(ngModel)]="name" name="name" placeholder="Enter your name"
+        [ngClass]="submitted && name =='' ? 'error' : '' ">
+        <p  *ngIf="submitted && name ==''" style="color :red">*Fill first name</p> <br><br>
+
+    <span>D.O.B </span>
+    <input type="date" [(ngModel)]="dob" name="dob" placeholder="Enter your dob"> <br><br>
+     <p *ngIf="submitted && dob ==''" style="color :red">*Select Date of birth</p>
+
+    <h3>select Color</h3>
+    <input type="color" name="colors" [(ngModel)]="colors" (change)="column($event)">
+    <p *ngIf="submitted && colors ==''" style="color :red">*Select any color</p>
+    <br><br>
+
+    <span >RATING </span>
+    <input type="range" [(ngModel)]="range" name="range" min="0" max="10" placeholder="Enter your range"><br><br>
+    <p *ngIf="submitted && range ==''" style="color :red">*Give some rating</p>
+    <br>
+
+
+    <span>username </span>
+    <input type="text" [(ngModel)]="username" name="username" placeholder="Enter your username">
+    <p *ngIf="submitted && username ==''"  style="color :red">*fill username</p> <br><br>
+
+
+    <span>password </span>
+    <input type="password" [(ngModel)]="password" name="password" placeholder="Enter your password"> <br><br>
+    <p  *ngIf="submitted && password==''"  style="color :red">*fill Password</p> <br><br>
+
+
+
+
+    <p > Where you satisfied will car wash </p>
+    <input type="radio" value="yes" name="setisfied" id="setisfied" [(ngModel)]="setisfied">
+    <label for="people"> yes </label>
+    <br><br>
+    <input type="radio" value="No" name="setisfied" id="setisfie" [(ngModel)]="setisfied">
+    <label for="person">No</label><br><br>
+    <p  *ngIf="submitted && setisfied ==''"  style="color :red">*Select any</p> <br><br>
+    
+
+    <h4>I agree with you</h4>
+    <input type="checkbox" id="one" name="yes" value="yes" (change)="handleCheck($event)">
+    <label for="one">yes</label>
+    <br>
+    <!-- <h1>{{ Date |date:'M/d/yy'}}</h1> -->
+    <button type="submit" (click)="submit()">Submit</button>
+</form>

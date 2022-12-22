@@ -1,0 +1,54 @@
+<form [formGroup]="loginForm" (ngSubmit)="userlogin()"> 
+    <!-- name for user -->
+    <span>Name</span>
+    <input type="text" placeholder="Enter name" name="user" formControlName="user">
+    <!-- <p *ngIf="user && user.invalid && user.touched || submit==true && user && user.pristine && user.status=='INVALID'  " style="color:red ;">Enter Name</p><br><br> -->
+    <p *ngIf="submit==true && loginForm.controls['user'].errors?.['required'] || loginForm.controls['user'].status=='INVALID' &&loginForm.controls['user'].touched " style="color:red ;">Enter Name</p><br><br>
+  
+    <!-- password for user -->
+    <span>Password</span>
+    <input type="password" placeholder="Enter Password" name="password" formControlName="password">
+    <p *ngIf="password && password.invalid && password.touched || submit==true && password && password.status=='INVALID' " style="color:red ;">Enter password</p><br><br>
+    <!-- Date of Birth for user -->
+    <span>D.O.B</span>
+    <input type="date" name="dob" formControlName="dob">
+    <p *ngIf="dob && dob.touched && dob.invalid || submit==true && dob && dob.status=='INVALID'" style="color:red ;">Enter Date of Birth</p><br><br> 
+    <!-- age for user -->
+    <span>Enter your Age</span>
+    <input type="number" placeholder="Enter Age" name='age' formControlName="age">
+    <p *ngIf="age  && age.touched && age.invalid || submit==true && age && age.status=='INVALID'" style="color:red ;">Enter Age</p><br><br>
+    <!-- email id for user -->
+    <span>Email </span>
+    <input type="email" name="email" placeholder="Enter your email" formControlName="email"> 
+    <p *ngIf="email && email.invalid && email.touched || submit==true && email && email.status=='INVALID' " style="color:red ;">Enter valid Email</p><br><br>
+    <!-- fav color for user -->
+    <span>Select a Color</span>
+    <input type="color" placeholder="select a color" name="color" formControlName="color"><br>
+    <span *ngIf="submit==true && color && color.status=='INVALID'"  style="color:red;">select a option</span>
+    <!-- Username for user -->
+    <br><br>
+    <span>Username</span>
+    <input type="email" name="Username" placeholder="Enter your Username" formControlName="Username"> <br><br>
+    <span *ngIf="submit==true && Username && Username.status=='INVALID'"  style="color:red;">select a option</span>
+    <!-- Gender for user -->
+    <p> Gender </p>
+    <input type="radio" value="male" name="gender" id="people" formControlName="gender" >
+    <label for="people"> Male </label>
+    <input type="radio" value="FeMale" name="gender" id="person" formControlName="gender" >
+    <label for="person">FeMale</label><br>
+    <span *ngIf="submit==true && gender && gender.status=='INVALID'" style="color:red;"> Select A gender</span><br><br>
+    <!-- select option for user -->
+    <span>Select car </span>
+    <select name="select" formControlName="select" >
+    <option value="" [defaultSelected]="">select</option>
+    <option *ngFor="let val of value" value="{{val}}"> {{val }}</option>
+    </select><br>
+    <span *ngIf="submit==true && select && select.status=='INVALID'"  style="color:red;">select a option</span><br><br>
+    <!-- chechbox for fuel -->
+    <input type="checkbox" formControlName="Fuel">
+    <span>I Agree</span><br><br>
+    <span *ngIf="submit==true && Fuel && !Fuel.value"  style="color:red;">Select Checkbox</span><br><br>
+    <button type="submit">Login</button>
+    
+</form>
+<button style="float:left ;" (click)="sidebtn()">DEMO</button>

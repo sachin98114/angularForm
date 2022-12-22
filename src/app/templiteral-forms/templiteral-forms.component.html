@@ -1,0 +1,55 @@
+<form class="forms">
+  
+  <span>Name </span>
+  <input type="text" [(ngModel)]="user" name="user" placeholder="Enter your name" [ngClass]="submitted && user =='' ? 'error' : '' "> <br><br>
+  <span>Email </span>
+  <input type="email" [(ngModel)]="email" name="email" placeholder="Enter your email"> <br><br>
+  <span>Password </span>
+  <input type="password" [(ngModel)]="password" name="password" placeholder="Enter your password"> <br><br>
+
+  <p> Gender </p>
+  <input type="radio" value="male" name="gender" id="people" [(ngModel)]="gender">
+  <label for="people"> Male </label>
+  <br><br>
+  <input type="radio" value="FeMale" name="gender" id="person" [(ngModel)]="gender">
+  <label for="person">FeMale</label><br><br>
+
+
+  <span>Select car </span>
+  <select (change)="selectValue($event)">
+  <option default>Pick a team</option>
+  <option *ngFor="let val of value" value="{{val}}"> {{val }}</option>
+  </select>
+  <br><br>
+
+
+  <span>Car Color </span>
+  <select (change)="carcol($event)">
+  <option default>Pick a Color</option>
+  <option *ngFor="let col of color" value="{{col}}">{{col}}</option>
+  </select>
+  <br><br>
+
+
+
+
+  <h4>Fuel</h4>
+  <input type="checkbox" id="one" name="Diesel" value="Diesel" (change)="handleCheck($event)">
+  <label for="one">Diesel</label>
+  <br>
+  <input type="checkbox" id="two" name="Petrol" value="Petrol" (change)="handleCheck($event)">
+  <label for="two">Petrol</label>
+  <br>
+  <input type="checkbox" id="three" name="fuel" value="C.N.G" (change)="handleCheck($event)">
+  <label for="three">C.N.G</label>
+  <br><br>
+
+
+  <h3>select Color</h3>
+  <input type="color" (change)="column($event)">
+  <!-- <h1 style="color: {{colors}} ;">hello</h1> -->
+  
+  <button type="submit" (click)="submit()" >Submit</button>
+</form>
+  
+
