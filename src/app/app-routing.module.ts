@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TempliteralFormsComponent } from './templiteral-forms/templiteral-forms.component';

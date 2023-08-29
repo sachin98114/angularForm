@@ -9,16 +9,18 @@ import { OutputComponent } from './output/output.component';
 import { EleDirective } from './ele.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TestformComponent } from './testform/testform.component';
+import { ExampleComponent } from './example/example.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TempliteralFormsComponent,
     InputComponent,
     OutputComponent,
     EleDirective,
+    TempliteralFormsComponent,
     ReactiveFormComponent,
     TestformComponent,
+    ExampleComponent,
     
   ],
   imports: [

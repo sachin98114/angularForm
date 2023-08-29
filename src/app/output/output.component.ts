@@ -1,24 +1,14 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
   styleUrls: ['./output.component.css']
 })
-export class OutputComponent implements OnInit {
-@Output () start=new EventEmitter;
-hide:boolean=false;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class OutputComponent {
   
+  @Output () start=new EventEmitter;
   getval(){
-    this.start.emit({name:"yuvi" , gfname:"varsha❤️"})
-    this.hide=!this.hide;
+    this.start.emit({name:"yuvi" , weaight:"102kg"})
   }
-  color(){
-    this.hide=!this.hide;
-  }
-  arr=["sachin","deepak","ashish","ashutosh","barun","tarun","amit","narayan"]
 }
